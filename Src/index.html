@@ -11,7 +11,6 @@
     />
     <meta name="theme-color" content="#0f172a" />
 
-    <!-- Open Graph / Social -->
     <meta
       property="og:title"
       content="Yash Sachdev | Cloud Engineer Portfolio"
@@ -20,11 +19,7 @@
       property="og:description"
       content="Azure • Terraform • CI/CD (GitHub Actions). Projects, certifications, and contact."
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="photo.png" />
-    <meta property="og:url" content="https://your-domain.com" />
 
-    <!-- Icons (Devicon for tech stack) -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
@@ -35,13 +30,11 @@
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
     />
 
-    <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- Theme boot: saved preference > system -->
     <script>
       (() => {
-        const saved = localStorage.getItem("theme"); // "light" | "dark" | null
+        const saved = localStorage.getItem("theme");
         const root = document.documentElement;
         root.setAttribute(
           "data-theme",
@@ -70,7 +63,7 @@
         </nav>
 
         <div class="actions">
-          <a class="btn btn-small hide-mobile" href="resume.pdf" download
+          <a class="btn btn-small hide-mobile" href="Src\resume.pdf" download
             >Download Resume</a
           >
           <button
@@ -91,7 +84,7 @@
         <div class="container hero-container">
           <div class="hero-image">
             <div class="avatar">
-              <img src="photo.png" alt="Yash Sachdev headshot" />
+              <img src="Src\photo.png" alt="Yash Sachdev headshot" />
             </div>
           </div>
           <div class="hero-text">
@@ -339,7 +332,6 @@
         <div class="container">
           <h2 class="section-title reveal">Contact Me</h2>
 
-          <!-- Formspree: replace YOUR_FORMSPREE_ID below -->
           <form
             id="contactForm"
             action="https://formspree.io/f/xjkejnqv"
@@ -439,7 +431,6 @@
         setTheme(currentTheme() === "dark" ? "light" : "dark")
       );
 
-      // Scroll reveal (lightweight, no libraries)
       const revealEls = document.querySelectorAll(".reveal");
       const io = new IntersectionObserver(
         (entries) => {
@@ -460,7 +451,6 @@
         window.scrollTo({ top: 0, behavior: "smooth" })
       );
 
-      // Contact form (Formspree async + inline status)
       const form = document.getElementById("contactForm");
       const statusEl = document.getElementById("formStatus");
       form?.addEventListener("submit", async (e) => {
