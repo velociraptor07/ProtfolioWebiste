@@ -1,72 +1,489 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Yash Sachdev | Cloud Engineer Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="description"
+      content="Cloud & DevOps portfolio of Yash Sachdev — Azure, Terraform, CI/CD with GitHub Actions, and automation projects."
+    />
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Open Graph / Social -->
+    <meta
+      property="og:title"
+      content="Yash Sachdev | Cloud Engineer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Azure • Terraform • CI/CD (GitHub Actions). Projects, certifications, and contact."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="photo.png" />
+    <meta property="og:url" content="https://your-domain.com" />
+
+    <!-- Icons (Devicon for tech stack) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Theme boot: saved preference > system -->
+    <script>
+      (() => {
+        const saved = localStorage.getItem("theme"); // "light" | "dark" | null
+        const root = document.documentElement;
+        root.setAttribute(
+          "data-theme",
+          saved === "light" || saved === "dark" ? saved : "auto"
+        );
+      })();
+    </script>
   </head>
+
   <body>
-    <header class="hero">
-      <div class="hero-container">
-        <div class="hero-image">
-          <img src="photo.png" alt="Yash Sachdev" class="profile-pic" />
-        </div>
-        <div class="hero-text">
-          <h1>Hi, I'm <span class="highlight">Yash Sachdev</span></h1>
-          <p class="subtitle">Aspiring Cloud Engineer | DevOps Enthusiast</p>
-          <a href="resume.pdf" target="_blank" class="btn">View Resume</a>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#">
+          <span class="brand-mark" aria-hidden="true">☁︎</span>
+          <span class="brand-text">Yash Sachdev</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#stack">Tech Stack</a>
+          <a href="#projects">Projects</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="actions">
+          <a class="btn btn-small hide-mobile" href="resume.pdf" download
+            >Download Resume</a
+          >
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle dark mode"
+            title="Toggle theme"
+          >
+            <span class="icon" aria-hidden="true">🌗</span>
+          </button>
         </div>
       </div>
     </header>
 
-    <section id="projects" class="projects-section">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Personal Portfolio Website Deployment</h3>
-          <p>
-            Deployed a portfolio site to Azure App Service using GitHub Actions,
-            with CI/CD pipeline and custom domain setup.
-          </p>
-          <a href="#" class="project-btn">View Project</a>
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero-container">
+          <div class="hero-image">
+            <div class="avatar">
+              <img src="photo.png" alt="Yash Sachdev headshot" />
+            </div>
+          </div>
+          <div class="hero-text">
+            <h1 class="reveal">
+              Hi, I’m <span class="highlight">Yash Sachdev</span>
+            </h1>
+            <p class="subtitle reveal">
+              Aspiring Cloud Engineer • DevOps Enthusiast
+            </p>
+            <div class="cta-row reveal">
+              <a href="resume.pdf" target="_blank" rel="noopener" class="btn"
+                >View Resume</a
+              >
+              <a href="#projects" class="btn btn-ghost">Explore Projects</a>
+            </div>
+          </div>
         </div>
-        <div class="project-card">
-          <h3>Azure VM Automation with Terraform</h3>
-          <p>
-            Automated provisioning of a Windows B1s VM on Azure using Terraform,
-            integrated with GitHub Actions workflow.
-          </p>
-          <a href="#" class="project-btn">View Project</a>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="about-section">
+        <div class="container about-grid">
+          <div class="about-copy">
+            <h2 class="section-title reveal">About Me</h2>
+            <p class="reveal">
+              I turn manual runbooks into
+              <strong>repeatable, auditable deployments</strong>. My focus:
+              <strong>Azure</strong>, <strong>Terraform</strong>, and
+              <strong>GitHub Actions</strong>—shipping small, safe changes fast
+              and documenting the path so teams can follow it.
+            </p>
+            <p class="reveal">
+              I care about clean modules, helpful logs, and practical
+              monitoring. If something breaks at 2 AM, I want future-me to
+              smile, not swear.
+            </p>
+
+            <h3 class="subheading reveal">What I work with</h3>
+            <ul class="tags reveal" role="list" aria-label="Technical skills">
+              <li>Azure</li>
+              <li>Terraform (IaC)</li>
+              <li>GitHub Actions</li>
+              <li>Linux</li>
+              <li>Python</li>
+              <li>PowerShell</li>
+              <li>Networking basics</li>
+              <li>CI/CD</li>
+            </ul>
+
+            <div class="key-points">
+              <div class="kp reveal">
+                <span class="kp-emoji" aria-hidden="true">🚀</span
+                ><span>Reusable Terraform modules & env parity</span>
+              </div>
+              <div class="kp reveal">
+                <span class="kp-emoji" aria-hidden="true">🔒</span
+                ><span
+                  >Secrets hygiene, least-privilege, branch protections</span
+                >
+              </div>
+              <div class="kp reveal">
+                <span class="kp-emoji" aria-hidden="true">📈</span
+                ><span>Dashboards & alerts that humans actually use</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="about-card reveal">
+            <h3 class="subheading">Quick Links</h3>
+            <ul class="quick-links" role="list">
+              <li>
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://linkedin.com/in/sachdevyash"
+                  >LinkedIn</a
+                >
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://github.com/your-username"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="resume.pdf" download
+                  >Resume (PDF)</a
+                >
+              </li>
+            </ul>
+            <div class="contact-blurb">
+              <p><strong>Location:</strong> Mississauga, ON</p>
+              <p>
+                <strong>Email:</strong>
+                <a href="mailto:ysachdev19297@gmail.com"
+                  >ysachdev19297@gmail.com</a
+                >
+              </p>
+              <p>
+                <strong>Phone:</strong>
+                <a href="tel:+16477456156">+1 (647) 745-6156</a>
+              </p>
+            </div>
+          </aside>
         </div>
+      </section>
+
+      <!-- Tech Stack (icons) -->
+      <section id="stack" class="stack-section">
+        <div class="container">
+          <h2 class="section-title reveal">Tech Stack</h2>
+          <ul class="stack-grid" role="list">
+            <li class="stack-item reveal">
+              <i class="devicon-azure-plain"></i><span>Azure</span>
+            </li>
+            <li class="stack-item reveal">
+              <i class="devicon-terraform-plain"></i><span>Terraform</span>
+            </li>
+            <li class="stack-item reveal">
+              <i class="devicon-github-original"></i
+              ><span>GitHub / Actions</span>
+            </li>
+            <li class="stack-item reveal">
+              <i class="devicon-amazonwebservices-plain-wordmark"></i
+              ><span>AWS</span>
+            </li>
+            <li class="stack-item reveal">
+              <i class="devicon-linux-plain"></i><span>Linux</span>
+            </li>
+            <li class="stack-item reveal">
+              <i class="devicon-python-plain"></i><span>Python</span>
+            </li>
+            <li class="stack-item reveal">
+              <i class="devicon-bash-plain"></i><span>Shell</span>
+            </li>
+            <li class="stack-item reveal">
+              <i class="devicon-mysql-plain"></i><span>SQL</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="projects-section">
+        <div class="container">
+          <h2 class="section-title reveal">Projects</h2>
+          <ul class="projects-grid" role="list">
+            <li class="reveal">
+              <a
+                class="project-card"
+                href="https://github.com/your-username/portfolio-deploy"
+                target="_blank"
+                rel="noopener"
+                aria-label="Open GitHub repo: Personal Portfolio Website Deployment"
+              >
+                <img
+                  class="project-thumb"
+                  src="assets/portfolio-thumb.jpg"
+                  alt="Screenshot of portfolio deployment"
+                />
+                <div class="project-card-body">
+                  <h3>Personal Portfolio Website Deployment</h3>
+                  <p>
+                    Deployed a portfolio to Azure App Service using GitHub
+                    Actions (CI/CD), custom domain + HTTPS.
+                  </p>
+                  <ul class="tags" aria-label="Tech stack">
+                    <li>Azure App Service</li>
+                    <li>GitHub Actions</li>
+                    <li>DNS/HTTPS</li>
+                  </ul>
+                </div>
+                <span class="project-card-cta" aria-hidden="true"
+                  >View on GitHub →</span
+                >
+              </a>
+            </li>
+
+            <li class="reveal">
+              <a
+                class="project-card"
+                href="https://github.com/your-username/terraform-azure-b1s"
+                target="_blank"
+                rel="noopener"
+                aria-label="Open GitHub repo: Azure VM Automation with Terraform"
+              >
+                <img
+                  class="project-thumb"
+                  src="assets/terraform-thumb.jpg"
+                  alt="Terraform provisioning Azure VM"
+                />
+                <div class="project-card-body">
+                  <h3>Azure VM Automation with Terraform</h3>
+                  <p>
+                    Provisioned a Windows B1s VM on Azure via Terraform with a
+                    reusable module and CI workflow.
+                  </p>
+                  <ul class="tags" aria-label="Tech stack">
+                    <li>Terraform</li>
+                    <li>Azure</li>
+                    <li>CI/CD</li>
+                  </ul>
+                </div>
+                <span class="project-card-cta" aria-hidden="true"
+                  >View on GitHub →</span
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section id="certifications" class="certs-section">
+        <div class="container">
+          <h2 class="section-title reveal">Certifications</h2>
+          <ul class="certs-grid" role="list">
+            <li class="cert-card reveal">
+              <div class="cert-title">
+                <span class="badge" aria-hidden="true">AWS</span>
+                <h3>AWS Certified Cloud Practitioner</h3>
+              </div>
+              <p class="cert-meta">Amazon Web Services · Verified credential</p>
+              <!-- Replace with your public credential/credly link -->
+              <a
+                class="btn"
+                target="_blank"
+                rel="noopener"
+                href="https://www.credly.com/"
+                >View Credential</a
+              >
+            </li>
+          </ul>
+          <p class="cert-note reveal">
+            More in progress (Azure Fundamentals, Terraform Associate) — watch
+            this space.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <h2 class="section-title reveal">Contact Me</h2>
+
+          <!-- Formspree: replace YOUR_FORMSPREE_ID below -->
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/xjkejnqv"
+            method="POST"
+            class="contact-form reveal"
+            novalidate
+          >
+            <input type="hidden" name="_subject" value="Portfolio Contact" />
+            <!-- Honeypot -->
+            <input
+              type="text"
+              name="_gotcha"
+              style="display: none"
+              tabindex="-1"
+              autocomplete="off"
+            />
+
+            <div class="input">
+              <label class="visually-hidden" for="name">Your Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your Name"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <div class="input">
+              <label class="visually-hidden" for="email">Your Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Your Email"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="input">
+              <label class="visually-hidden" for="message">Your Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Your Message"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+
+            <p
+              id="formStatus"
+              class="form-status"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 <strong>Yash Sachdev</strong>. All rights reserved.</p>
       </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-      <h2>Contact Me</h2>
-      <form
-        action="mailto:your-email@example.com"
-        method="POST"
-        enctype="text/plain"
-      >
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea
-          name="message"
-          rows="5"
-          placeholder="Your Message"
-          required
-        ></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-    </section>
-
-    <footer>
-      <p>© 2025 Yash Sachdev. All rights reserved.</p>
     </footer>
+
+    <!-- Back to Top -->
+    <button
+      id="backToTop"
+      class="back-to-top"
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      ↑
+    </button>
+
+    <script>
+      // Theme toggle (dark/light)
+      const themeBtn = document.getElementById("themeToggle");
+      const root = document.documentElement;
+      const setTheme = (mode) => {
+        root.setAttribute("data-theme", mode);
+        if (mode === "auto") localStorage.removeItem("theme");
+        else localStorage.setItem("theme", mode);
+      };
+      const currentTheme = () => {
+        const dt = root.getAttribute("data-theme");
+        if (dt === "auto")
+          return matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        return dt;
+      };
+      themeBtn.addEventListener("click", () =>
+        setTheme(currentTheme() === "dark" ? "light" : "dark")
+      );
+
+      // Scroll reveal (lightweight, no libraries)
+      const revealEls = document.querySelectorAll(".reveal");
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("in");
+          });
+        },
+        { threshold: 0.15 }
+      );
+      revealEls.forEach((el) => io.observe(el));
+
+      // Back to top
+      const btt = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        btt.classList.toggle("show", window.scrollY > 500);
+      });
+      btt.addEventListener("click", () =>
+        window.scrollTo({ top: 0, behavior: "smooth" })
+      );
+
+      // Contact form (Formspree async + inline status)
+      const form = document.getElementById("contactForm");
+      const statusEl = document.getElementById("formStatus");
+      form?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        statusEl.textContent = "Sending…";
+        try {
+          const data = new FormData(form);
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: { Accept: "application/json" },
+          });
+          if (res.ok) {
+            form.reset();
+            statusEl.textContent = "Thanks! I’ll get back to you shortly.";
+          } else {
+            statusEl.textContent =
+              "Something went wrong. Please try again or email me directly.";
+          }
+        } catch {
+          statusEl.textContent = "Network error. Please try again.";
+        }
+      });
+    </script>
   </body>
 </html>
