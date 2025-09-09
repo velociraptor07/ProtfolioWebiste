@@ -1,0 +1,22 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.log
+
+# Terraform (ignore only generated files, keep your .tf)
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/*.tfstate.*
+
+# VS Code settings
+.vscode/
+
+# Node/npm (if you add build tools later)
+node_modules/
+npm-debug.log
+
+# Python cache (if experimenting later)
+__pycache__/
+*.pyc
