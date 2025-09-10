@@ -1,17 +1,20 @@
-name: Deploy Yash Portfolio
+name: Deploy Portfolio Website
+
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   workflow_dispatch: {}
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: yash-portfolio-zggmk
+          app-name: yash-portfolio-zggmk  
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ./Src
+          package: ./Src 
